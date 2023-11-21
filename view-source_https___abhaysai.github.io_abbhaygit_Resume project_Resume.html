@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Harsha Vardhan
+</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css  ">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+
+<header id="body-header">
+<nav>
+<ul class="horizontal-list text-center nav-menu">
+<li>
+<a href="#">Home</a>
+</li>
+<li>
+<a href="#about">About</a>
+</li>
+<li>
+<a href="#skills">Skills</a>
+</li>
+<li>
+    <a href="#education">Education</a>
+    </li>
+<li>
+<a href="#experience">Experience</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
+</ul>
+</nav>
+<div id="name-conatiner">
+<div class="text-center">
+<h1 id="my-name">REDDY HARSHA VARDHAN KOLLA</h1></div>
+</div>
+</header>
+<main>
+
+<section id="about">
+
+<div id="my-image">
+<img src=""></div>
+<div>
+<p class="about-section">I can say that I am a responsible and a hard-working student. Moreover, being a <span id="bolded">sociable person</span>, I have many friends since I like to communicate with people and get to know new interesting individuals. I enjoy my <span id="bolded">time at school</span>: it is really nice to study, the<span id="bolded">students </span> are very friendly and ready to help. The atmosphere cannot but make me want to go there every time. I like to receive and deal with challenging tasks. I am a very<span id="bolded"> enthusiastic student</span> and I think this is a strong point of mine.</p>
+</div>
+
+</section>
+<section id="Education">
+<h2>EDUCATION</h2>
+    
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Qualification</th>
+                <th>Year of Passing</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Master's in Computer Science (pursuing)</td>
+                <td>2025</td>
+                <td>--</td>
+            </tr>
+            <tr>
+                <td>Bachelor of Technology in IT</td>
+                <td>2023</td>
+                <td>9.34</td>
+            </tr>
+            <tr>
+                <td>Intermediate in MPC</td>
+                <td>2019</td>
+                <td>93.1</td>
+            </tr>
+        </tbody>
+        </table>
+    </section>
+
+
+
+
+<section id="skills">
+<h1 class="section-heading mb75px"></h1>
+<span>
+<i class="fas fa-chalkboard-teacher"></i>
+</span>
+<ul>
+    <li>c language</li>
+    <li>python</li>
+    <li>web programming</li>
+    <li>SQL</li>
+</ul>
+</section>
+
+
+
+<section id="experience">
+<h1 class="section-heading mb75px">
+<span><i class="fas fa-briefcase"></i></span>
+<span>Internship</span>
+</h1>
+<div class="timeline">
+
+<div class="time-line-box">
+<div class="time-line-container">
+<div class="time-line-logo">
+<img src="silicon_india.jpeg">
+</div>
+<h3 class="experience-designation m0 m-blue">
+    Intern</h3>
+<h4 class="experience-company-name">Silicon India Limited</h4>
+<h5 class="experience-duration m0">March 2023-May 2023 </h5>
+<p class="experience-description text-align-justify">• Completed traning in basics of web programming and worked on a minor and major project.
+    • Built a trail website for the magzine company.</p>
+</div>
+</div>
+</section>
+
+
+
+ <!-- Light/Dark Mode Toggle -->
+ <script src="script.js"></script>
+
+ <section id="contact">
+    <h1 class="section-heading mb50px">
+    <span>
+    <i class="fa fa-address-card" aria-hidden="true"></i>
+    </span>
+    <span>CONTACT</span>
+    </h1>
+    <div id="contact-conatiner">
+    <div id="contact-form-container">
+    <form id="contact-form" name="submit-to-google-sheet">
+    <input type="text" id="input-name" name="name" placeholder="Your Name">
+    <input type="text" id="input-email" name="email" placeholder="Your Email">
+    <textarea id="input-text" name="message" rows="2" cols="40" placeholder="Message"></textarea>
+    <button class="submit-button" type="submit">SEND MESSAGE</button>
+    </form>
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxf9WYs1v_4q1Sxodpx0qZdW96FG6WOiliVq1tRnPaflUt8lxFgpjdot9sers8M4uThow/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</section>
+
+</main>
+
+</body>
+</html>
