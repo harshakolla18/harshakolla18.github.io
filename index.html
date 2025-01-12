@@ -105,126 +105,60 @@ Harsha Kolla
         </table>
       </div>
 
-      <!-- Skills Tab -->
-      <div id="skills" class="tab-panel">
-        <h2>Skills Acquired</h2>
-        <ul class="skills-list">
-          <li>
-            <strong>C Programming</strong>
-            <ul class="sub-skills">
-              <li>Memory Management</li>
-              <li>Data Structures</li>
-              <li>File Handling</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Python</strong>
-            <ul class="sub-skills">
-              <li>Data Analysis</li>
-              <li>Machine Learning</li>
-              <li>Web Scraping</li>
-            </ul>
-          </li>
-          <li>
-            <strong>JavaScript</strong>
-            <ul class="sub-skills">
-              <li>Frontend Development</li>
-              <li>DOM Manipulation</li>
-              <li>API Integration</li>
-            </ul>
-          </li>
-        </ul>
-        <p class="note">Note: Tools used include Visual Studio Code, PyCharm, Jupyter Notebook, and Chrome DevTools.</p>
-      </div>
-    </div>
-  </div>
+<section id="skills">
+  <h2>Skills Acquired</h2>
+  <ul class="skills-list">
+    <li>
+      <strong>C Programming</strong>
+      <ul class="sub-skills">
+        <li>Memory Management</li>
+        <li>Data Structures</li>
+        <li>File Handling</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Python</strong>
+      <ul class="sub-skills">
+        <li>Data Analysis</li>
+        <li>Machine Learning</li>
+        <li>Web Scraping</li>
+      </ul>
+    </li>
+    <li>
+      <strong>JavaScript</strong>
+      <ul class="sub-skills">
+        <li>Frontend Development</li>
+        <li>DOM Manipulation</li>
+        <li>API Integration</li>
+      </ul>
+    </li>
+  </ul>
+  <p class="note">Note: Tools used include Visual Studio Code, PyCharm, Jupyter Notebook, and Chrome DevTools.</p>
 </section>
 
 <style>
-  /* Tab Layout Styles */
-  .tab-container {
-    display: flex;
-    flex-direction: row;
-    max-width: 900px;
+  /* Styling for the Skills Section */
+  #skills {
     margin: 20px auto;
+    max-width: 800px;
     font-family: Arial, sans-serif;
-  }
-
-  .tabs {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    border-right: 2px solid #ddd;
-  }
-
-  .tab-button {
-    background: #f9f9f9;
-    border: none;
-    padding: 15px 10px;
-    text-align: left;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-
-  .tab-button:hover,
-  .tab-button.active {
-    background: #007acc;
-    color: #fff;
-  }
-
-  .tab-content {
-    flex: 3;
-    padding: 20px;
-  }
-
-  .tab-panel {
-    display: none;
-  }
-
-  .tab-panel.active {
-    display: block;
   }
 
   h2 {
     font-size: 1.8em;
+    text-align: center;
     color: #333;
     margin-bottom: 15px;
+    text-transform: uppercase;
     border-bottom: 2px solid #007acc;
+    display: inline-block;
     padding-bottom: 5px;
-  }
-
-  .styled-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 10px 0;
-    font-size: 1em;
-    text-align: left;
-  }
-
-  .styled-table thead tr {
-    background-color: #007acc;
-    color: white;
-    font-weight: bold;
-  }
-
-  .styled-table th,
-  .styled-table td {
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-  }
-
-  .styled-table tbody tr:nth-child(even) {
-    background-color: #f3f3f3;
-  }
-
-  .styled-table tbody tr:hover {
-    background-color: #f1f9ff;
   }
 
   .skills-list {
     list-style-type: none;
     padding: 0;
+    margin: 0;
   }
 
   .skills-list > li {
@@ -235,30 +169,31 @@ Harsha Kolla
     border-radius: 8px;
   }
 
+  .skills-list > li strong {
+    font-size: 1.2em;
+    color: #007acc;
+  }
+
   .sub-skills {
     list-style-type: circle;
     margin: 10px 0 0 20px;
+    padding: 0;
+  }
+
+  .sub-skills li {
+    margin: 5px 0;
+    color: #555;
   }
 
   .note {
+    margin-top: 15px;
     font-size: 0.9em;
     color: #666;
     font-style: italic;
+    text-align: center;
   }
 </style>
 
-<script>
-  function showTab(tabId) {
-    const tabs = document.querySelectorAll(".tab-panel");
-    const buttons = document.querySelectorAll(".tab-button");
-
-    tabs.forEach(tab => tab.classList.remove("active"));
-    buttons.forEach(button => button.classList.remove("active"));
-
-    document.getElementById(tabId).classList.add("active");
-    document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add("active");
-  }
-</script>
 
 
 <section id="experience">
