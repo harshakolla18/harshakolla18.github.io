@@ -1,55 +1,46 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>
-Harsha Kolla
-</title>
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
-<link rel="stylesheet" type="text/css" href="style.css  ">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harsha Kolla</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
 
 <header id="body-header">
-<nav>
-<ul class="horizontal-list text-center nav-menu">
-<li>
-<a href="#">Home</a>
-</li>
-<li>
-<a href="#about">About</a>
-</li>
-<li>
-<a href="#skills">Skills</a>
-</li>
-<li>
-    <a href="#education">Education</a>
-    </li>
-<li>
-<a href="#experience">Experience</a>
-</li>
-
-<li>
-<a href="#contact">Contact</a>
-</li>
-    <button id="mode-toggle">Toggle Mode</button>
-</ul>
-</nav>
-<div id="name-conatiner">
-<div class="text-center">
-<h1 id="my-name">REDDY HARSHA VARDHAN KOLLA</h1></div>
-</div>
+  <nav>
+    <ul class="horizontal-list text-center nav-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <button id="mode-toggle">Toggle Mode</button>
+    </ul>
+  </nav>
+  <div id="name-container">
+    <div class="text-center">
+      <h1 id="my-name">REDDY HARSHA VARDHAN KOLLA</h1>
+    </div>
+  </div>
 </header>
+
 <main>
 
 <section id="about">
+  <div id="my-image">
+    <img src="my image.jpeg" alt="Harsha Kolla">
+  </div>
+  <div>
+    <p class="about-section">
+      I am a dedicated and enthusiastic Master's student in Computer Science at Saint Louis University, with a strong passion for technology and problem-solving. Over the course of my studies, I have gained hands-on experience through several internships, where I developed valuable skills in web development, machine learning, and software engineering. I thrive in collaborative environments and enjoy tackling challenging projects. I am always eager to learn and apply new technologies, aiming to contribute to the advancement of innovative solutions in the field of computer science.
+    </p>
+  </div>
+</section>
 
-<div id="my-image">
-<img src="my image.jpeg"></div>
-<div>
-<p class="about-section">I can say that I am a responsible and a hard-working student. Moreover, being a <span id="bolded">sociable person</span>, I have many friends since I like to communicate with people and get to know new interesting individuals. I enjoy my <span id="bolded">time at school</span>: it is really nice to study, the<span id="bolded">students </span> are very friendly and ready to help. The atmosphere cannot but make me want to go there every time. I like to receive and deal with challenging tasks. I am a very<span id="bolded"> enthusiastic student</span> and I think this is a strong point of mine.</p>
-</div>
 <section id="education">
   <h2>Education</h2>
   <div class="education-timeline">
@@ -68,7 +59,7 @@ Harsha Kolla
       </p>
       <span class="year">2023</span>
       <p>Vit University</p>
-   
+    </div>
   </div>
 </section>
 
@@ -90,170 +81,61 @@ Harsha Kolla
   </ul>
 </section>
 
-<style>
-  /* General Section Styling */
-  #education, #skills {
-    margin: 20px auto;
-    max-width: 800px;
-    font-family: Arial, sans-serif;
-  }
-
-  h2 {
-    font-size: 1.8em;
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #007acc;
-    display: inline-block;
-    padding-bottom: 5px;
-  }
-
-  /* Education Timeline Styling */
-  .education-timeline {
-    position: relative;
-    margin: 20px 0;
-    padding: 0 20px;
-  }
-
-  .timeline-item {
-    position: relative;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    border-left: 3px solid #007acc;
-  }
-
-  .timeline-item .timeline-title {
-    font-size: 1.4em;
-    color: #007acc;
-    cursor: pointer;
-    margin: 0;
-  }
-
-  .timeline-item .year {
-    font-size: 1em;
-    color: #666;
-    margin-top: 5px;
-    display: inline-block;
-  }
-
-  .timeline-item p {
-    margin: 5px 0 0;
-    font-size: 1em;
-    color: #555;
-  }
-
-  .timeline-item:before {
-    content: '';
-    position: absolute;
-    left: -8px;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    background: #007acc;
-    border-radius: 50%;
-    border: 2px solid white;
-  }
-
-  /* Skills List Styling */
-  .skills-list {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .skills-list li {
-    background: #007acc;
-    color: white;
-    margin: 10px;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 1em;
-    font-weight: bold;
-    position: relative;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .skills-list li:hover {
-    background: #005fa3;
-  }
-
-  .skill-name {
-    display: block;
-    text-align: center;
-  }
-
-  /* Collapsible Note Styling */
-  .note {
-    margin-top: 10px;
-    background: #f0f0f0;
-    color: #333;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 0.9em;
-    display: none; /* Initially hidden */
-    position: a
-
-
-
-
 <section id="experience">
-<h1 class="section-heading mb75px">
-<span><i class="fas fa-briefcase"></i></span>
-<span>Internship</span>
-</h1>
-<div class="timeline">
-
-<div class="time-line-box">
-<div class="time-line-container">
-<div class="time-line-logo">
-<img src="silicon_india.jpeg">
-</div>
-<h3 class="experience-designation m0 m-blue">
-    Intern</h3>
-<h4 class="experience-company-name">Silicon India Limited</h4>
-<h5 class="experience-duration m0">March 2023-May 2023 </h5>
-<p class="experience-description text-align-justify">• Completed traning in basics of web programming and worked on a minor and major project.
-    • Built a trail website for the magzine company</p>
-</div>
+  <h1 class="section-heading mb75px">
+    <span><i class="fas fa-briefcase"></i></span>
+    <span>Internship</span>
+  </h1>
+  <div class="timeline">
+    <div class="time-line-box">
+      <div class="time-line-container">
+        <div class="time-line-logo">
+          <img src="silicon_india.jpeg" alt="Silicon India">
+        </div>
+        <h3 class="experience-designation m0 m-blue">Intern</h3>
+        <h4 class="experience-company-name">Silicon India Limited</h4>
+        <h5 class="experience-duration m0">March 2023 - May 2023</h5>
+        <p class="experience-description text-align-justify">
+          • Completed training in the basics of web programming and worked on a minor and major project. <br>
+          • Built a trial website for a magazine company.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
 
- <!-- Light/Dark Mode Toggle -->
- <script src="script.js"></script>
-
- <section id="contact">
-    <h1 class="section-heading mb50px">
-    <span>
-    <i class="fa fa-address-card" aria-hidden="true"></i>
-    </span>
-    <span>CONTACT</span>
-    </h1>
-    <div id="contact-conatiner">
+<section id="contact">
+  <h1 class="section-heading mb50px">
+    <span><i class="fa fa-address-card" aria-hidden="true"></i></span>
+    <span>Contact</span>
+  </h1>
+  <div id="contact-container">
     <div id="contact-form-container">
-    <form id="contact-form" name="submit-to-google-sheet">
-    <input type="text" id="input-name" name="name" placeholder="Your Name">
-    <input type="text" id="input-email" name="email" placeholder="Your Email">
-    <textarea id="input-text" name="message" rows="2" cols="40" placeholder="Message"></textarea>
-    <button class="submit-button" type="submit">SEND MESSAGE</button>
-    </form>
+      <form id="contact-form" name="submit-to-google-sheet">
+        <input type="text" id="input-name" name="name" placeholder="Your Name">
+        <input type="text" id="input-email" name="email" placeholder="Your Email">
+        <textarea id="input-text" name="message" rows="2" cols="40" placeholder="Message"></textarea>
+        <button class="submit-button" type="submit">SEND MESSAGE</button>
+      </form>
     </div>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxf9WYs1v_4q1Sxodpx0qZdW96FG6WOiliVq1tRnPaflUt8lxFgpjdot9sers8M4uThow/exec'
-        const form = document.forms['submit-to-google-sheet']
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => console.log('Success!', response))
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxf9WYs1v_4q1Sxodpx0qZdW96FG6WOiliVq1tRnPaflUt8lxFgpjdot9sers8M4uThow/exec'
+      const form = document.forms['submit-to-google-sheet']
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+  </div>
 </section>
+
+<!-- Light/Dark Mode Toggle -->
+<script src="script.js"></script>
+
 </main>
 
 </body>
 </html>
-
