@@ -50,7 +50,7 @@ Harsha Kolla
 <div>
 <p class="about-section">I can say that I am a responsible and a hard-working student. Moreover, being a <span id="bolded">sociable person</span>, I have many friends since I like to communicate with people and get to know new interesting individuals. I enjoy my <span id="bolded">time at school</span>: it is really nice to study, the<span id="bolded">students </span> are very friendly and ready to help. The atmosphere cannot but make me want to go there every time. I like to receive and deal with challenging tasks. I am a very<span id="bolded"> enthusiastic student</span> and I think this is a strong point of mine.</p>
 </div>
-<<section id="education">
+<section id="education">
   <h2>Education</h2>
   <div class="education-timeline">
     <div class="timeline-item">
@@ -84,21 +84,15 @@ Harsha Kolla
   <h2>Skills Acquired</h2>
   <ul class="skills-list">
     <li>
-      <span class="skill-name" onclick="toggleSkillNote('c-note')">C Programming</span>
-      <p class="note" id="c-note">
-        Experienced in basic and advanced C programming concepts, including pointers, memory management, and data structures.
+      <span class="skill-name" onclick="toggleSkillNote('webapp-js-note')">Web Application & JavaScript</span>
+      <p class="note" id="webapp-js-note">
+        Experienced in developing responsive and dynamic web applications using HTML, CSS, JavaScript, and frameworks like React. Proficient in JavaScript for building interactive user interfaces and handling web logic.
       </p>
     </li>
     <li>
-      <span class="skill-name" onclick="toggleSkillNote('python-note')">Python</span>
-      <p class="note" id="python-note">
-        Proficient in Python for data analysis, machine learning, and automation. Familiar with libraries such as Pandas, NumPy, and Scikit-learn.
-      </p>
-    </li>
-    <li>
-      <span class="skill-name" onclick="toggleSkillNote('js-note')">JavaScript</span>
-      <p class="note" id="js-note">
-        Strong knowledge of JavaScript for building interactive web applications, with experience using frameworks like React.
+      <span class="skill-name" onclick="toggleSkillNote('ml-note')">Machine Learning</span>
+      <p class="note" id="ml-note">
+        Proficient in machine learning algorithms and techniques, including regression, classification, and clustering. Familiar with libraries such as Scikit-learn, TensorFlow, and Keras.
       </p>
     </li>
   </ul>
@@ -209,27 +203,8 @@ Harsha Kolla
     border-radius: 5px;
     font-size: 0.9em;
     display: none; /* Initially hidden */
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-  }
-</style>
+    position: a
 
-<script>
-  function toggleEducationNote(noteId) {
-    const note = document.getElementById(noteId);
-    note.style.display = note.style.display === 'block' ? 'none' : 'block';
-  }
-
-  function toggleSkillNote(noteId) {
-    const note = document.getElementById(noteId);
-    note.style.display = note.style.display === 'block' ? 'none' : 'block';
-  }
-</script>
 
 
 
