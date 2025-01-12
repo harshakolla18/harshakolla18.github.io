@@ -50,28 +50,57 @@ Harsha Kolla
 <div>
 <p class="about-section">I can say that I am a responsible and a hard-working student. Moreover, being a <span id="bolded">sociable person</span>, I have many friends since I like to communicate with people and get to know new interesting individuals. I enjoy my <span id="bolded">time at school</span>: it is really nice to study, the<span id="bolded">students </span> are very friendly and ready to help. The atmosphere cannot but make me want to go there every time. I like to receive and deal with challenging tasks. I am a very<span id="bolded"> enthusiastic student</span> and I think this is a strong point of mine.</p>
 </div>
-<section id="education">
+<<section id="education">
   <h2>Education</h2>
   <div class="education-timeline">
     <div class="timeline-item">
-      <h3>M.S. in Computer Science</h3>
+      <span class="timeline-title" onclick="toggleEducationNote('ms-note')">M.S. in Computer Science</span>
+      <p class="note" id="ms-note">
+        Currently pursuing a Master’s in Computer Science at Saint Louis University. Focus areas include data science, machine learning, and software engineering.
+      </p>
       <span class="year">2025</span>
       <p>Saint Louis University</p>
     </div>
     <div class="timeline-item">
-      <h3>Bachelor of Technology</h3>
+      <span class="timeline-title" onclick="toggleEducationNote('bt-note')">Bachelor of Technology</span>
+      <p class="note" id="bt-note">
+        Completed a Bachelor's degree in Technology, gaining a strong foundation in computer science and engineering principles.
+      </p>
       <span class="year">2023</span>
-      <p>VIT University</p>
-
+      <p>[Your Undergraduate University Name]</p>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-title" onclick="toggleEducationNote('intermediate-note')">Intermediate in MPC</span>
+      <p class="note" id="intermediate-note">
+        Studied Mathematics, Physics, and Chemistry at the intermediate level, which provided a solid foundation for further engineering studies.
+      </p>
+      <span class="year">2019</span>
+      <p>[Your School/College Name]</p>
+    </div>
   </div>
 </section>
 
 <section id="skills">
   <h2>Skills Acquired</h2>
   <ul class="skills-list">
-    <li>C Programming</li>
-    <li>Python</li>
-    <li>JavaScript</li>
+    <li>
+      <span class="skill-name" onclick="toggleSkillNote('c-note')">C Programming</span>
+      <p class="note" id="c-note">
+        Experienced in basic and advanced C programming concepts, including pointers, memory management, and data structures.
+      </p>
+    </li>
+    <li>
+      <span class="skill-name" onclick="toggleSkillNote('python-note')">Python</span>
+      <p class="note" id="python-note">
+        Proficient in Python for data analysis, machine learning, and automation. Familiar with libraries such as Pandas, NumPy, and Scikit-learn.
+      </p>
+    </li>
+    <li>
+      <span class="skill-name" onclick="toggleSkillNote('js-note')">JavaScript</span>
+      <p class="note" id="js-note">
+        Strong knowledge of JavaScript for building interactive web applications, with experience using frameworks like React.
+      </p>
+    </li>
   </ul>
 </section>
 
@@ -108,9 +137,10 @@ Harsha Kolla
     border-left: 3px solid #007acc;
   }
 
-  .timeline-item h3 {
+  .timeline-item .timeline-title {
     font-size: 1.4em;
     color: #007acc;
+    cursor: pointer;
     margin: 0;
   }
 
@@ -151,18 +181,55 @@ Harsha Kolla
   .skills-list li {
     background: #007acc;
     color: white;
-    margin: 5px;
+    margin: 10px;
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 1em;
     font-weight: bold;
+    position: relative;
+    cursor: pointer;
     transition: background-color 0.3s ease;
   }
 
   .skills-list li:hover {
     background: #005fa3;
   }
+
+  .skill-name {
+    display: block;
+    text-align: center;
+  }
+
+  /* Collapsible Note Styling */
+  .note {
+    margin-top: 10px;
+    background: #f0f0f0;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
 </style>
+
+<script>
+  function toggleEducationNote(noteId) {
+    const note = document.getElementById(noteId);
+    note.style.display = note.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function toggleSkillNote(noteId) {
+    const note = document.getElementById(noteId);
+    note.style.display = note.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
 
 
 
