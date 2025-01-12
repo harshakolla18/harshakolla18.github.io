@@ -41,45 +41,166 @@
     </div>
   </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <div class="education-timeline">
-      <div class="timeline-item">
-        <span class="timeline-title" onclick="toggleEducationNote('ms-note')">M.S. in Computer Science</span>
-        <p class="note" id="ms-note">
-          Currently pursuing a Master’s in Computer Science at Saint Louis University. Focus areas include data science, machine learning, and software engineering.
-        </p>
-        <span class="year">2025</span>
-        <p>Saint Louis University</p>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-title" onclick="toggleEducationNote('bt-note')">Bachelor of Technology</span>
-        <p class="note" id="bt-note">
-          Completed a Bachelor's degree in Technology, gaining a strong foundation in computer science and engineering principles.
-        </p>
-        <span class="year">2023</span>
-        <p>Vit University</p>
-      </div>
+<section id="education">
+  <h2>Education</h2>
+  <div class="education-timeline">
+    <div class="timeline-item">
+      <span class="timeline-title" onclick="toggleEducationNote('ms-note')">M.S. in Computer Science</span>
+      <p class="note" id="ms-note">
+        Currently pursuing a Master’s in Computer Science at Saint Louis University. Focus areas include data science, machine learning, and software engineering.
+      </p>
+      <span class="year">2025</span>
+      <p>Saint Louis University</p>
     </div>
-  </section>
+    <div class="timeline-item">
+      <span class="timeline-title" onclick="toggleEducationNote('bt-note')">Bachelor of Technology</span>
+      <p class="note" id="bt-note">
+        Completed a Bachelor's degree in Technology, gaining a strong foundation in computer science and engineering principles.
+      </p>
+      <span class="year">2023</span>
+      <p>Vit University</p>
+    </div> <!-- Closed the div here -->
+  </div>
+</section>
 
-  <section id="skills">
-    <h2>Skills Acquired</h2>
-    <ul class="skills-list">
-      <li>
-        <span class="skill-name" onclick="toggleSkillNote('webapp-js-note')">Web Application & JavaScript</span>
-        <p class="note" id="webapp-js-note">
-          Experienced in developing responsive and dynamic web applications using HTML, CSS, JavaScript, and frameworks like React. Proficient in JavaScript for building interactive user interfaces and handling web logic.
-        </p>
-      </li>
-      <li>
-        <span class="skill-name" onclick="toggleSkillNote('ml-note')">Machine Learning</span>
-        <p class="note" id="ml-note">
-          Proficient in machine learning algorithms and techniques, including regression, classification, and clustering. Familiar with libraries such as Scikit-learn, TensorFlow, and Keras.
-        </p>
-      </li>
-    </ul>
-  </section>
+<section id="skills">
+  <h2>Skills Acquired</h2>
+  <ul class="skills-list">
+    <li>
+      <span class="skill-name" onclick="toggleSkillNote('webapp-js-note')">Web Application & JavaScript</span>
+      <p class="note" id="webapp-js-note">
+        Experienced in developing responsive and dynamic web applications using HTML, CSS, JavaScript, and frameworks like React. Proficient in JavaScript for building interactive user interfaces and handling web logic.
+      </p>
+    </li>
+    <li>
+      <span class="skill-name" onclick="toggleSkillNote('ml-note')">Machine Learning</span>
+      <p class="note" id="ml-note">
+        Proficient in machine learning algorithms and techniques, including regression, classification, and clustering. Familiar with libraries such as Scikit-learn, TensorFlow, and Keras.
+      </p>
+    </li>
+  </ul>
+</section>
+
+<style>
+  /* General Section Styling */
+  #education, #skills {
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #007acc;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  /* Education Timeline Styling */
+  .education-timeline {
+    position: relative;
+    margin: 20px 0;
+    padding: 0 20px;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border-left: 3px solid #007acc;
+  }
+
+  .timeline-item .timeline-title {
+    font-size: 1.4em;
+    color: #007acc;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .timeline-item .year {
+    font-size: 1em;
+    color: #666;
+    margin-top: 5px;
+    display: inline-block;
+  }
+
+  .timeline-item p {
+    margin: 5px 0 0;
+    font-size: 1em;
+    color: #555;
+  }
+
+  .timeline-item:before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background: #007acc;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+
+  /* Skills List Styling */
+  .skills-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .skills-list li {
+    background: #007acc;
+    color: white;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .skills-list li:hover {
+    background: #005fa3;
+  }
+
+  .skill-name {
+    display: block;
+    text-align: center;
+  }
+
+  /* Collapsible Note Styling */
+  .note {
+    margin-top: 10px;
+    background: #f0f0f0;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    display: none; /* Initially hidden */
+  }
+</style>
+
+<script>
+  function toggleEducationNote(noteId) {
+    var note = document.getElementById(noteId);
+    note.style.display = note.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function toggleSkillNote(noteId) {
+    var note = document.getElementById(noteId);
+    note.style.display = note.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
+
 
   <section id="experience">
     <h1 class="section-heading mb75px">
