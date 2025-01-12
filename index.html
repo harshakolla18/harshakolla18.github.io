@@ -51,58 +51,112 @@ Harsha Kolla
 <p class="about-section">I can say that I am a responsible and a hard-working student. Moreover, being a <span id="bolded">sociable person</span>, I have many friends since I like to communicate with people and get to know new interesting individuals. I enjoy my <span id="bolded">time at school</span>: it is really nice to study, the<span id="bolded">students </span> are very friendly and ready to help. The atmosphere cannot but make me want to go there every time. I like to receive and deal with challenging tasks. I am a very<span id="bolded"> enthusiastic student</span> and I think this is a strong point of mine.</p>
 </div>
 
-</section>
-<section id="Education">
-<h2>EDUCATION</h2>
-    
-    <table border="2">
-        <thead>
-            <tr>
-                <th>Qualification</th>
-                <th>Year of Passing</th>
-               
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>M.S Computer Science </td>
-                <td>2025</td>
-            </tr>
-            <tr>
-                <td>Bachelor of Technology</td>
-                <td>2023</td>
-            </tr>
-            <tr>
-                <td>Intermediate in MPC</td>
-                <td>2019</td>
-            </tr>
-        </tbody>
-        </table>
-    </section>
-<section id="skills">
-<h2>Skills Acquired</h2>
-<table border="2">
+<section id="education">
+  <h2>Education</h2>
+  <table class="styled-table">
     <thead>
-        <tr>
-            <th> Name</th>
-        </tr>
+      <tr>
+        <th>Qualification</th>
+        <th>Year of Passing</th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>C </td>
-        </tr>
-        <tr>
-            <td>Python</td>
-            
-        </tr>
-        <tr>
-            <td>Java <Script></Script></td>
-            
-        </tr>
+      <tr>
+        <td>M.S. in Computer Science</td>
+        <td>2025</td>
+      </tr>
+      <tr>
+        <td>Bachelor of Technology</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>Intermediate in MPC</td>
+        <td>2019</td>
+      </tr>
     </tbody>
-</table>
-
+  </table>
 </section>
+
+<section id="skills">
+  <h2>Skills Acquired</h2>
+  <ul class="skills-list">
+    <li>C Programming</li>
+    <li>Python</li>
+    <li>JavaScript</li>
+  </ul>
+</section>
+
+<style>
+  /* Styling for the Education and Skills Sections */
+  #education, #skills {
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #007acc;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 1em;
+    text-align: left;
+  }
+
+  .styled-table thead tr {
+    background-color: #007acc;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .styled-table th, .styled-table td {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+  }
+
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+  }
+
+  .styled-table tbody tr:hover {
+    background-color: #f1f9ff;
+  }
+
+  .skills-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .skills-list li {
+    background: #007acc;
+    color: white;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .skills-list li:hover {
+    background: #005fa3;
+  }
+</style>
+
 
 
 
