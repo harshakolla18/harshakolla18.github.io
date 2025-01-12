@@ -63,40 +63,32 @@ Harsha Kolla
     <tbody>
       <tr>
         <td>M.S. in Computer Science</td>
-        <td> May 2025</td>
+        <td>2025</td>
       </tr>
       <tr>
         <td>Bachelor of Technology</td>
-        <td>June 2023</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>Intermediate in MPC</td>
+        <td>2019</td>
       </tr>
     </tbody>
   </table>
-<section id="tabs">
-  <div class="tab-container">
-   
-    
-      <strong>Python</strong>
-      <ul class="sub-skills">
-        <li>Data Analysis</li>
-        <li>Machine Learning</li>
-        <li>Web Scraping</li>
-      </ul>
-    </li>
-    <li>
-      <strong>JavaScript</strong>
-      <ul class="sub-skills">
-        <li>Frontend Development</li>
-        <li>DOM Manipulation</li>
-        <li>API Integration</li>
-      </ul>
-    </li>
+</section>
+
+<section id="skills">
+  <h2>Skills Acquired</h2>
+  <ul class="skills-list">
+    <li>C Programming</li>
+    <li>Python</li>
+    <li>JavaScript</li>
   </ul>
-  <p class="note">Note: Tools used include Visual Studio Code, PyCharm, Jupyter Notebook, and Chrome DevTools.</p>
 </section>
 
 <style>
-  /* Styling for the Skills Section */
-  #skills {
+  /* Styling for the Education and Skills Sections */
+  #education, #skills {
     margin: 20px auto;
     max-width: 800px;
     font-family: Arial, sans-serif;
@@ -113,42 +105,55 @@ Harsha Kolla
     padding-bottom: 5px;
   }
 
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 1em;
+    text-align: left;
+  }
+
+  .styled-table thead tr {
+    background-color: #007acc;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .styled-table th, .styled-table td {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+  }
+
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+  }
+
+  .styled-table tbody tr:hover {
+    background-color: #f1f9ff;
+  }
+
   .skills-list {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .skills-list > li {
-    margin: 10px 0;
-    background: #f0f4f8;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+  .skills-list li {
+    background: #007acc;
+    color: white;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
   }
 
-  .skills-list > li strong {
-    font-size: 1.2em;
-    color: #007acc;
-  }
-
-  .sub-skills {
-    list-style-type: circle;
-    margin: 10px 0 0 20px;
-    padding: 0;
-  }
-
-  .sub-skills li {
-    margin: 5px 0;
-    color: #555;
-  }
-
-  .note {
-    margin-top: 15px;
-    font-size: 0.9em;
-    color: #666;
-    font-style: italic;
-    text-align: center;
+  .skills-list li:hover {
+    background: #005fa3;
   }
 </style>
 
