@@ -256,38 +256,6 @@ Project Overview: An online banking system web application designed for users to
 </section>
 
 
-  <section id="contact">
-    <h1 class="section-heading mb50px">
-      <span><i class="fa fa-address-card" aria-hidden="true"></i></span>
-      <span>CONTACT</span>
-    </h1>
-    <div id="contact-conatiner">
-      <div id="contact-form-container">
-        <form id="contact-form" name="submit-to-google-sheet">
-          <input type="text" id="input-name" name="name" placeholder="Your Name">
-          <input type="text" id="input-email" name="email" placeholder="Your Email">
-          <textarea id="input-text" name="message" rows="2" cols="40" placeholder="Message"></textarea>
-          <button class="submit-button" type="submit">SEND MESSAGE</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- Light/Dark Mode Toggle -->
-<script src="script.js"></script>
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxf9WYs1v_4q1Sxodpx0qZdW96FG6WOiliVq1tRnPaflUt8lxFgpjdot9sers8M4uThow/exec';
-  const form = document.forms['submit-to-google-sheet'];
-  
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message));
-  });
-</script>
   <section id="awards">
   <h2>Awards & Achievements</h2>
   <div class="awards-container">
@@ -310,12 +278,13 @@ Project Overview: An online banking system web application designed for users to
         <span class="award-date">May 2023</span>
         <p class="award-description">Awarded for placing in the top 5 in a nationwide hackathon competition, developing a machine learning-based solution for healthcare analytics.</p>
       </li>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     </ul>
   </div>
 </section>
 
   
-/* Styling for Awards Section */
+
   <style>
   
 #awards {
@@ -381,6 +350,61 @@ Project Overview: An online banking system web application designed for users to
 }
  </style>
     
+<footer id="footer">
+  <div class="footer-content text-center">
+    <p>&copy; 2025 Harsha Kolla. All Rights Reserved.</p>
+  </div>
+</footer>
 
+  
+<style>
+#footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+#footer p {
+  margin: 0;
+}
+</style>
+  
+  <section id="contact">
+    <h1 class="section-heading mb50px">
+      <span><i class="fa fa-address-card" aria-hidden="true"></i></span>
+      <span>CONTACT</span>
+    </h1>
+    <div id="contact-conatiner">
+      <div id="contact-form-container">
+        <form id="contact-form" name="submit-to-google-sheet">
+          <input type="text" id="input-name" name="name" placeholder="Your Name">
+          <input type="text" id="input-email" name="email" placeholder="Your Email">
+          <textarea id="input-text" name="message" rows="2" cols="40" placeholder="Message"></textarea>
+          <button class="submit-button" type="submit">SEND MESSAGE</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Light/Dark Mode Toggle -->
+<script src="script.js"></script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxf9WYs1v_4q1Sxodpx0qZdW96FG6WOiliVq1tRnPaflUt8lxFgpjdot9sers8M4uThow/exec';
+  const form = document.forms['submit-to-google-sheet'];
+  
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message));
+  });
+</script>
 </body>
 </html>
