@@ -582,7 +582,123 @@ Project Overview: An online banking system web application designed for users to
             margin: 0;
         }
     </style>
-   
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation Example</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            height: 100vh; /* Ensure the body takes full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Pushes content to top and bottom */
+        }
+
+        /* Header Styling */
+        h1 {
+            font-size: 2em;
+            margin-top: 30px;
+            color: #333;
+        }
+
+        /* Location Box Styling */
+        #location {
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 30px;
+            width: 90%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: absolute; /* Position at the bottom */
+            bottom: 20px; /* 20px from the bottom */
+        }
+
+        /* Location Data Styling */
+        #location p {
+            font-size: 0.7em; /* Very small font size */
+            color: #333;
+            line-height: 1.6;
+            margin: 5px 0;
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 40px;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+    <script>
+        // Function to get user location
+        function getLocation() {
+            const apiKey = '33b63d2e13dc438dacd40ef959e72c1d'; // Replace with your API key
+
+            // Fetch user IP geolocation data
+            fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Access location data
+                    const city = data.city;
+                    const country = data.country_name;
+                    const latitude = data.latitude;
+                    const longitude = data.longitude;
+                    const ip = data.ip;
+
+                    // Display the location data
+                    document.getElementById('location').innerHTML = `
+                        <p><strong>IP:</strong> ${ip}</p>
+                        <p><strong>City:</strong> ${city}</p>
+                        <p><strong>Country:</strong> ${country}</p>
+                        <p><strong>Latitude:</strong> ${latitude}</p>
+                        <p><strong>Longitude:</strong> ${longitude}</p>
+                    `;
+                })
+                .catch(error => console.error('Error fetching location data:', error));
+        }
+
+        // Call the getLocation function when the page loads
+        window.onload = getLocation;
+    </script>
+</head>
+<body>
+    <h1>User Location</h1>
+
+    <!-- Google Analytics Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKER_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-SJWPH538KX');
+    </script>
+
+    <!-- Location Box at the Bottom -->
+    <div id="location">
+        <!-- Location details will be displayed here -->
+    </div>
+
+
+
 
     <!-- Footer Section -->
     <footer>
