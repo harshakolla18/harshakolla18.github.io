@@ -582,54 +582,7 @@ Project Overview: An online banking system web application designed for users to
             margin: 0;
         }
     </style>
-    <script>
-        // Function to get user location
-        function getLocation() {
-            const apiKey = '33b63d2e13dc438dacd40ef959e72c1d'; // Replace with your API key
-
-            // Fetch user IP geolocation data
-            fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}`)
-                .then(response => response.json())
-                .then(data => {
-                    // Access location data
-                    const city = data.city;
-                    const country = data.country_name;
-                    const latitude = data.latitude;
-                    const longitude = data.longitude;
-                    const ip = data.ip;
-
-                    // Display the location data
-                    document.getElementById('location').innerHTML = `
-                        <p><strong>IP:</strong> ${ip}</p>
-                        <p><strong>City:</strong> ${city}</p>
-                        <p><strong>Country:</strong> ${country}</p>
-                        <p><strong>Latitude:</strong> ${latitude}</p>
-                        <p><strong>Longitude:</strong> ${longitude}</p>
-                    `;
-                })
-                .catch(error => console.error('Error fetching location data:', error));
-        }
-
-        // Call the getLocation function when the page loads
-        window.onload = getLocation;
-    </script>
-</head>
-<body>
-    <h1>User Location</h1>
-    <div id="location">
-        <!-- Location details will be displayed here -->
-    </div>
-
-    <!-- Google Analytics Script -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKER_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-SJWPH538KX');
-    </script>
+   
 
     <!-- Footer Section -->
     <footer>
