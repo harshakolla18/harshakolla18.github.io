@@ -2925,3 +2925,62 @@ ${restOfExistingStyles}
         font-size: 0.8rem;
     }
 }
+
+.platform-name {
+    color: #4a90e2;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #4a90e2;
+    transition: all 0.3s ease;
+}
+
+.platform-name:hover {
+    color: #2c5282;
+    text-decoration-color: #2c5282;
+}
+
+.timeline-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0 2px;
+}
+
+.timeline-content a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.timeline-content a:hover {
+    color: var(--secondary-color);
+}
+
+.timeline-content a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.timeline-content a.platform-name {
+    color: #4a90e2;
+    font-weight: 600;
+}
+
+.timeline-content a.platform-name:hover {
+    color: #2c5282;
+}
+
+.timeline-content a.platform-name::after {
+    background-color: #4a90e2;
+}
