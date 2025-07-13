@@ -61,6 +61,7 @@ body {
     color: var(--text-color);
     background-color: var(--white);
     padding-top: 70px;
+    overflow-x: hidden;
 }
 
 a {
@@ -2983,4 +2984,65 @@ ${restOfExistingStyles}
 
 .timeline-content a.platform-name::after {
     background-color: #4a90e2;
+}
+
+/* Responsive Enhancements */
+.container, .hero-content, .timeline-content, .projects-grid, .contact-container {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+    .container, .hero-content, .timeline-content, .projects-grid, .contact-container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .timeline-content {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container, .hero-content, .timeline-content, .projects-grid, .contact-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .hero {
+        padding: 2rem 0;
+    }
+    .timeline-content {
+        padding: 0.75rem;
+    }
+    .project-card {
+        padding: 1rem;
+    }
+    .contact-form-container, .contact-info-container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container, .hero-content, .timeline-content, .projects-grid, .contact-container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .hero {
+        padding: 1rem 0;
+    }
+    .timeline-content {
+        padding: 0.5rem;
+    }
+    .project-card {
+        padding: 0.5rem;
+    }
+    .contact-form-container, .contact-info-container {
+        padding: 0.5rem;
+    }
 }
