@@ -115,22 +115,35 @@ document.addEventListener("DOMContentLoaded", () => {
       const submitBtn = contactForm.querySelector(".submit-btn");
       const originalBtnText = submitBtn.innerHTML;
 
-      // Show loading state
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       submitBtn.disabled = true;
 
-      // Simulate form submission (replace with actual form submission logic)
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const formData = new FormData(contactForm);
 
-      // Show success message
-      submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
-      submitBtn.style.background =
-        "linear-gradient(135deg, #10b981 0%, #059669 100%)";
+      try {
+        const response = await fetch("/contact", {
+          method: "POST",
+          body: formData,
+        });
+        const result = await response.json();
 
-      // Reset form
-      contactForm.reset();
+        if (result.success) {
+          submitBtn.innerHTML =
+            '<i class="fas fa-check"></i> Sent Successfully!';
+          submitBtn.style.background =
+            "linear-gradient(135deg, #10b981 0%, #059669 100%)";
+          contactForm.reset();
+        } else {
+          submitBtn.innerHTML = '<i class="fas fa-times"></i> Failed to Send!';
+          submitBtn.style.background =
+            "linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)";
+        }
+      } catch (error) {
+        submitBtn.innerHTML = '<i class="fas fa-times"></i> Error!';
+        submitBtn.style.background =
+          "linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)";
+      }
 
-      // Reset button after 3 seconds
       setTimeout(() => {
         submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;
