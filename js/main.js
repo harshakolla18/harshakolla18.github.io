@@ -121,18 +121,39 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = new FormData(contactForm);
 
       try {
-        const response = await fetch("/contact", {
+        const response = await fetch(contactForm.action, {
           method: "POST",
           body: formData,
         });
-        const result = await response.json();
-
-        if (result.success) {
+        // Show success message with tick if successful
+        if (response.ok) {
           submitBtn.innerHTML =
             '<i class="fas fa-check"></i> Sent Successfully!';
           submitBtn.style.background =
             "linear-gradient(135deg, #10b981 0%, #059669 100%)";
           contactForm.reset();
+          // Show a temporary success message below the form
+          let successMsg = document.getElementById("contact-success-msg");
+          if (!successMsg) {
+            successMsg = document.createElement("div");
+            successMsg.id = "contact-success-msg";
+            successMsg.style.marginTop = "16px";
+            successMsg.style.color = "#059669";
+            successMsg.style.fontWeight = "600";
+            successMsg.style.display = "flex";
+            successMsg.style.alignItems = "center";
+            successMsg.innerHTML =
+              '<i class="fas fa-check-circle" style="margin-right:8px;"></i>Message sent successfully!';
+            contactForm.parentNode.appendChild(successMsg);
+          } else {
+            successMsg.style.display = "flex";
+          }
+          setTimeout(() => {
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            submitBtn.style.background = "";
+            if (successMsg) successMsg.style.display = "none";
+          }, 3000);
         } else {
           submitBtn.innerHTML = '<i class="fas fa-times"></i> Failed to Send!';
           submitBtn.style.background =
