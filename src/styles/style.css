@@ -81,7 +81,7 @@ ul {
     padding: 2rem 0;
     position: relative;
     overflow: hidden;
-    background-image: url('../images/hero-bg.jpg');
+    background-image: url('/public/images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -715,16 +715,6 @@ ul {
         transform: rotate(-45deg);
     }
 }
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--gradient-primary);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
 
 .navbar.scrolled::before {
     opacity: 1;
@@ -891,7 +881,6 @@ ul {
 .nav-links a.active:not(.resume-btn)::after {
     transform: scaleX(1);
     transform-origin: left;
-}
 }
 
 @media (max-width: 768px) {
@@ -1157,7 +1146,6 @@ ul {
 .timeline-item:nth-child(5) { transition-delay: 0.5s; }
 
 /* Rest of your existing CSS styles... */
-${restOfExistingStyles}
 /* Resume Download Button */
 .hero-buttons {
     margin-top: 2rem;
@@ -1952,7 +1940,7 @@ ${restOfExistingStyles}
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('../images/bg-pattern.svg');
+    background: url('/public/images/bg-pattern.svg');
     opacity: 0.1;
     background-size: 30px;
 }
@@ -2049,7 +2037,7 @@ ${restOfExistingStyles}
 .projects {
     padding: 6rem 0;
     position: relative;
-    background: linear-gradient(rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.95)), url('../images/bg-pattern.svg');
+    background: linear-gradient(rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.95)), url('/public/images/bg-pattern.svg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -2233,7 +2221,6 @@ ${restOfExistingStyles}
     padding: 4rem 0 2rem;
     position: relative;
     overflow: hidden;
-}
 
 .footer::before {
     content: '';
@@ -3051,14 +3038,15 @@ ${restOfExistingStyles}
 }
 
 /* Chatbot Styles */
-#chatbot-container {
+.chatbot-container {
   position: fixed;
   bottom: 32px;
   right: 32px;
   z-index: 9999;
   font-family: 'Inter', sans-serif;
 }
-#chatbot-toggle {
+
+.chatbot-toggle {
   background: #2d2d2d;
   color: #fff;
   border: 3px solid #fff;
@@ -3075,18 +3063,21 @@ ${restOfExistingStyles}
   padding: 0;
   overflow: hidden;
 }
-#chatbot-toggle img {
+
+.chatbot-toggle img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
 }
-#chatbot-toggle:hover {
+
+.chatbot-toggle:hover {
   background: #003366;
   transform: scale(1.12);
 }
-#chatbot-window {
+
+.chatbot-window {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -3103,12 +3094,14 @@ ${restOfExistingStyles}
   transition: opacity 0.2s, visibility 0.2s;
   font-size: 0.97rem;
 }
-#chatbot-window.hidden {
+
+.chatbot-window.hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
 }
-#chatbot-header {
+
+.chatbot-header {
   background: #003366;
   color: #fff;
   padding: 14px 18px;
@@ -3117,54 +3110,64 @@ ${restOfExistingStyles}
   justify-content: space-between;
   align-items: center;
 }
-#chatbot-close {
+
+.chatbot-header .close-btn {
   background: none;
   border: none;
   color: #fff;
   font-size: 1.3rem;
   cursor: pointer;
 }
-#chatbot-messages {
+
+.chatbot-messages {
   flex: 1;
   padding: 14px;
   overflow-y: auto;
   background: #f7f7f9;
   font-size: 0.97rem;
 }
-.chatbot-message {
+
+.message {
   margin-bottom: 12px;
   display: flex;
   flex-direction: column;
 }
-.chatbot-message.user {
+
+.message.user {
   align-items: flex-end;
 }
-.chatbot-message.bot {
+
+.message.bot {
   align-items: flex-start;
 }
-.chatbot-bubble {
+
+.message-content {
   padding: 10px 16px;
   border-radius: 16px;
   max-width: 80%;
   word-break: break-word;
   margin-bottom: 2px;
 }
-.chatbot-message.user .chatbot-bubble {
+
+.message.user .message-content {
   background: #003366;
   color: #fff;
   border-bottom-right-radius: 4px;
 }
-.chatbot-message.bot .chatbot-bubble {
+
+.message.bot .message-content {
   background: #e9ecef;
   color: #222;
   border-bottom-left-radius: 4px;
 }
-#chatbot-form {
+
+.chatbot-input {
   display: flex;
   border-top: 1px solid #eee;
   background: #fff;
 }
-#chatbot-input {
+
+.chatbot-input input {
   flex: 1;
   border: none;
   padding: 12px;
@@ -3173,7 +3176,8 @@ ${restOfExistingStyles}
   outline: none;
   background: #fff;
 }
-#chatbot-form button[type="submit"] {
+
+.chatbot-input button[type="submit"] {
   background: #003366;
   color: #fff;
   border: none;
@@ -3183,12 +3187,12 @@ ${restOfExistingStyles}
   border-radius: 0 0 0 0;
   transition: background 0.2s;
 }
-#chatbot-form button[type="submit"]:hover {
+
+.chatbot-input button[type="submit"]:hover {
   background: #002244;
 }
-/* End Chatbot Styles */
 
-.chatbot-suggestions {
+.message-suggestions {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -3198,7 +3202,8 @@ ${restOfExistingStyles}
   border: none;
   box-shadow: none;
 }
-.chatbot-suggestion-btn {
+
+.suggestion-btn {
   background: #e9ecef;
   color: #003366;
   border: none;
@@ -3215,7 +3220,60 @@ ${restOfExistingStyles}
   text-align: left;
   max-width: 80%;
 }
-.chatbot-suggestion-btn:hover {
+
+.suggestion-btn:hover {
   background: #003366;
   color: #fff;
 }
+
+.chatbot-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chatbot-info img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chatbot-info h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.chatbot-info .status {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.chatbot-status {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  background: #4CAF50;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.chatbot-status i {
+  display: none;
+}
+
+/* Add React-specific styles */
+.App {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Ensure smooth scrolling for React components */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure all existing styles are preserved */
