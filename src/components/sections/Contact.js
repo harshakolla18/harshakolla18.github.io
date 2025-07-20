@@ -1,4 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { auth } from "../../firebase/config";
+import {
+  signInWithPopup,
+  signOut,
+  onAuthStateChanged,
+  GoogleAuthProvider,
+} from "firebase/auth";
+import { createDocument } from "../../firebase/firestore";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +17,20 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  const [isLoginSubmitting, setIsLoginSubmitting] = useState(false);
+
+  // Check authentication state on component mount
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -17,30 +39,85 @@ const Contact = () => {
     });
   };
 
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // If user is not logged in, handle Google sign-in first
+    if (!user) {
+      try {
+        setIsLoginSubmitting(true);
+        const provider = new GoogleAuthProvider();
+        await signInWithPopup(auth, provider);
+        // After successful login, continue with message sending
+        setIsLoginSubmitting(false);
+      } catch (error) {
+        console.error("Google sign-in error:", error);
+        setIsLoginSubmitting(false);
+        return;
+      }
+    }
+
+    // Now send the message
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      const response = await fetch(
+      console.log("Submitting message with data:", {
+        ...formData,
+        userId: user.uid,
+        userEmail: user.email,
+        timestamp: new Date().toISOString(),
+      });
+
+      // Save message to Firestore
+      const result = await createDocument("messages", {
+        ...formData,
+        userId: user.uid,
+        userEmail: user.email,
+        timestamp: new Date().toISOString(),
+      });
+
+      console.log("Message saved to Firebase:", result);
+
+      // Also send email via formsubmit.co for immediate notification
+      const emailResponse = await fetch(
         "https://formsubmit.co/harshakolla90@gmail.com",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({
+            ...formData,
+            _subject: `Portfolio Contact: ${formData.subject}`,
+            _template: "table",
+          }),
         }
       );
 
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({ name: "", email: "", subject: "", message: "" });
+      if (emailResponse.ok) {
+        console.log("Email sent successfully");
       } else {
-        setSubmitStatus("error");
+        console.warn("Email sending failed, but message saved to Firebase");
       }
+
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
+      console.error("Error sending message:", error);
+      console.error("Error details:", {
+        code: error.code,
+        message: error.message,
+        stack: error.stack,
+      });
       setSubmitStatus("error");
     }
 
@@ -137,12 +214,40 @@ const Contact = () => {
     },
   ];
 
+  if (loading) {
+    return (
+      <section id="contact" className="contact">
+        <div className="container">
+          <div className="loading-spinner">
+            <i className="fas fa-spinner fa-spin"></i> Loading...
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="contact" className="contact">
       <div className="container">
         <h2 className="section-title" data-aos="fade-up">
           Get In Touch
         </h2>
+
+        {/* Authentication Status - Only show when logged in */}
+        {user && (
+          <div className="auth-status" data-aos="fade-up">
+            <div className="auth-info">
+              <span className="auth-text">
+                <i className="fas fa-user-check"></i>
+                Logged in as: {user.email}
+              </span>
+              <button onClick={handleLogout} className="logout-btn">
+                <i className="fas fa-sign-out-alt"></i> Logout
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="contact-container" data-aos="fade-up">
           <div className="contact-form-container">
             <form onSubmit={handleSubmit} className="contact-form">
@@ -188,11 +293,15 @@ const Contact = () => {
               <button
                 type="submit"
                 className="submit-btn"
-                disabled={isSubmitting}
+                disabled={isSubmitting || isLoginSubmitting}
               >
                 {isSubmitting ? (
                   <>
                     <i className="fas fa-spinner fa-spin"></i> Sending...
+                  </>
+                ) : isLoginSubmitting ? (
+                  <>
+                    <i className="fas fa-spinner fa-spin"></i> Signing in...
                   </>
                 ) : submitStatus === "success" ? (
                   <>
@@ -201,6 +310,10 @@ const Contact = () => {
                 ) : submitStatus === "error" ? (
                   <>
                     <i className="fas fa-times"></i> Failed to Send!
+                  </>
+                ) : !user ? (
+                  <>
+                    <i className="fab fa-google"></i> Sign in with Google & Send
                   </>
                 ) : (
                   <>
