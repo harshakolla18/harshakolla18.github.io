@@ -2435,16 +2435,42 @@ ul {
 .timeline-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1rem;
+}
+
+.timeline-header-content {
+    flex: 1;
 }
 
 .timeline-header h3 {
     font-size: 1.25rem;
     color: var(--primary-color);
     margin: 0;
+    white-space: pre-line;
+    line-height: 1.3;
+}
+
+.company-logo {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 2px;
 }
 
 .timeline-date {
@@ -2478,14 +2504,9 @@ ul {
 }
 
 .timeline-content ul li .highlight {
-    background: linear-gradient(120deg, rgba(79, 70, 229, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-    color: var(--primary-color);
+    color: var(--text-color);
     font-weight: 500;
     display: inline;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
 }
 
 .timeline-content ul li::before {
@@ -2792,6 +2813,13 @@ ul {
     .timeline-header {
         flex-direction: column;
         gap: 0.5rem;
+        align-items: flex-start;
+    }
+
+    .company-logo {
+        width: 100px;
+        height: 100px;
+        align-self: flex-end;
     }
 
     .timeline-content:hover {
