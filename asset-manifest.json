@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.47161123.css",
+    "main.js": "/static/js/main.8aea4063.js",
+    "static/media/logistics-platform.jpg": "/static/media/logistics-platform.8a96887bd42e60b8493c.jpg",
+    "static/media/DP.jpeg": "/static/media/DP.0f362a1ec5e8cee1f280.jpeg",
+    "static/media/crime-analytics.jpg": "/static/media/crime-analytics.c35709dd75c03612558f.jpg",
+    "static/media/hero-bg.jpg": "/static/media/hero-bg.49b808a3d1b018eb877b.jpg",
+    "static/media/vit-logo.png": "/static/media/vit-logo.f9a7357544f10d24d9ac.png",
+    "static/media/alpharecon_logo.png": "/static/media/alpharecon_logo.eda5e020fa31f61cd02b.png",
+    "static/media/attorney office.png": "/static/media/attorney office.431530be66975db16194.png",
+    "static/media/saint louis university.png": "/static/media/saint louis university.45251c01752f63f5e0cb.png",
+    "static/media/project2.jpg": "/static/media/project2.d37a26083ca4d717415f.jpg",
+    "static/media/chat bot.jpg": "/static/media/chat bot.d31f32bc05918c57fbce.jpg",
+    "static/media/project3.jpg": "/static/media/project3.ec3b2e7c71dbf8f6cdea.jpg",
+    "static/media/Metis.jpeg": "/static/media/Metis.757cf2cfb633ceb77ea7.jpeg",
+    "index.html": "/index.html",
+    "static/media/bg-pattern.svg": "/static/media/bg-pattern.e0925539ab05d8169c3f.svg",
+    "main.47161123.css.map": "/static/css/main.47161123.css.map",
+    "main.8aea4063.js.map": "/static/js/main.8aea4063.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.47161123.css",
+    "static/js/main.8aea4063.js"
+  ]
+}
