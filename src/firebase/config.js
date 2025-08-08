@@ -8,11 +8,9 @@ import { getAnalytics } from "firebase/analytics";
 // Get values from environment variables for security, with fallbacks
 const firebaseConfig = {
   apiKey:
-    process.env.REACT_APP_FIREBASE_API_KEY ||
-    "AIzaSyCytG3Bn7GU3n4ia952bf527Vv1xuOp2L0",
+    process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain:
-    process.env.REACT_APP_FIREBASE_AUTH_DOMAIN ||
-    "portfolio-f458d.firebaseapp.com",
+    process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID || "portfolio-f458d",
   storageBucket:
     process.env.REACT_APP_FIREBASE_STORAGE_BUCKET ||
