@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.47161123.css",
-    "main.js": "/static/js/main.8aea4063.js",
+    "main.js": "/static/js/main.d6c2ec33.js",
     "static/media/logistics-platform.jpg": "/static/media/logistics-platform.8a96887bd42e60b8493c.jpg",
     "static/media/DP.jpeg": "/static/media/DP.0f362a1ec5e8cee1f280.jpeg",
     "static/media/crime-analytics.jpg": "/static/media/crime-analytics.c35709dd75c03612558f.jpg",
@@ -17,10 +17,10 @@
     "index.html": "/index.html",
     "static/media/bg-pattern.svg": "/static/media/bg-pattern.e0925539ab05d8169c3f.svg",
     "main.47161123.css.map": "/static/css/main.47161123.css.map",
-    "main.8aea4063.js.map": "/static/js/main.8aea4063.js.map"
+    "main.d6c2ec33.js.map": "/static/js/main.d6c2ec33.js.map"
   },
   "entrypoints": [
     "static/css/main.47161123.css",
-    "static/js/main.8aea4063.js"
+    "static/js/main.d6c2ec33.js"
   ]
 }
