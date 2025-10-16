@@ -19,7 +19,6 @@ const Education = () => {
       logo: vitLogo,
       degree: "Bachelor of Technology in Computer Science",
       location: "Vellore, India",
-      date: "May 2021",
       coursework: [
         "Data Structures",
         "Algorithms",
