@@ -46,18 +46,13 @@ const Hero = () => {
           data-aos-delay="500"
         >
           <p>
-            AI Engineer with 2+ years of experience building and deploying
-            production-grade AI/ML systems on cloud platforms (AWS, Azure, GCP).
-            Hands-on experience with the full ML lifecycle — data preprocessing,
-            model training, validation, containerized deployment, and post-launch
-            monitoring — using Docker, Kubernetes (EKS, HPA), and CI/CD pipelines.
-            Skilled in building RAG pipelines, multi-agent systems, RESTful
-            inference APIs, and LLM-powered applications with LangChain, LangGraph,
-            GPT-4o, and FastAPI. Experienced in model drift detection, MLOps
-            observability (CloudWatch, Prometheus, Grafana, DataDog), and
-            Generative AI integration across regulated and high-traffic
-            environments. Strong in Python, Java, SQL, Agile methodologies, and
-            end-to-end product delivery.
+            AI Engineer with 2+ years deploying production AI/ML on AWS, Azure,
+            and GCP. I own the full lifecycle — training, containerized
+            deployment, and monitoring — with Docker, Kubernetes (EKS/HPA), and
+            CI/CD. Specialize in RAG pipelines, multi-agent systems, and
+            LLM apps using LangChain, LangGraph, GPT-4o, and FastAPI, with
+            strong MLOps observability (CloudWatch, Prometheus, Grafana,
+            DataDog).
           </p>
         </div>
 
