@@ -3,16 +3,16 @@ import profileImage from "../../assets/images/profile/DP.jpeg";
 
 const Hero = () => {
   const expertiseItems = [
-    { icon: "fas fa-robot", text: "Agentic AI Systems" },
-    { icon: "fas fa-brain", text: "Machine Learning" },
-    { icon: "fas fa-code", text: "Software Engineering" },
-    { icon: "fas fa-chart-line", text: "Data Analytics" },
+    { icon: "fas fa-robot", text: "Production AI/ML Systems" },
+    { icon: "fas fa-cloud", text: "AWS / Azure / GCP" },
+    { icon: "fab fa-docker", text: "Docker & Kubernetes (EKS)" },
+    { icon: "fas fa-project-diagram", text: "RAG & Multi-Agent Systems" },
   ];
 
   const stats = [
-    { number: "5+", label: "AI Projects Deployed" },
-    { number: "30%", label: "Cost Reduction" },
-    { number: "85%", label: "Efficiency Gain" },
+    { number: "2+", label: "Years AI/ML Experience" },
+    { number: "50%", label: "Manual Triage Reduction" },
+    { number: "40%", label: "API Response Improvement" },
   ];
 
   return (
@@ -33,11 +33,11 @@ const Hero = () => {
         </div>
 
         <h1 className="hero-name" data-aos="fade-up" data-aos-delay="300">
-          Harsha Kolla
+          Reddy Harsha Vardhan
         </h1>
 
         <p className="hero-role" data-aos="fade-up" data-aos-delay="400">
-          Software Engineer AI & Data
+          AI Engineer | Open to Relocate
         </p>
 
         <div
@@ -46,15 +46,18 @@ const Hero = () => {
           data-aos-delay="500"
         >
           <p>
-            As a Software Engineer with 3+ years of experience specializing in
-            AI and Data, I design and build intelligent systems that solve
-            real-world problems through scalable, impactful solutions. My
-            background spans AI-driven logistics optimization, financial data
-            analysis, and disaster response systems—merging deep technical
-            skills with a strong focus on practical outcomes. By combining
-            advanced AI/ML techniques with robust software engineering
-            practices, I develop applications that deliver measurable value
-            across domains.
+            AI Engineer with 2+ years of experience building and deploying
+            production-grade AI/ML systems on cloud platforms (AWS, Azure, GCP).
+            Hands-on experience with the full ML lifecycle — data preprocessing,
+            model training, validation, containerized deployment, and post-launch
+            monitoring — using Docker, Kubernetes (EKS, HPA), and CI/CD pipelines.
+            Skilled in building RAG pipelines, multi-agent systems, RESTful
+            inference APIs, and LLM-powered applications with LangChain, LangGraph,
+            GPT-4o, and FastAPI. Experienced in model drift detection, MLOps
+            observability (CloudWatch, Prometheus, Grafana, DataDog), and
+            Generative AI integration across regulated and high-traffic
+            environments. Strong in Python, Java, SQL, Agile methodologies, and
+            end-to-end product delivery.
           </p>
         </div>
 
