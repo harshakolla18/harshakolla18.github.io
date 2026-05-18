@@ -3737,3 +3737,12 @@ img, video {
         font-size: 0.9rem;
     }
 }
+
+/* iOS doesn't support background-attachment: fixed — causes stretched/blurry hero on mobile */
+@media (max-width: 992px) {
+    .hero {
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+}
