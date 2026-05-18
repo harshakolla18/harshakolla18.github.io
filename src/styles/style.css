@@ -3696,3 +3696,44 @@ img, video {
         font-size: 0.85rem;
     }
 }
+
+/* Tablet (≤992px) — smooth 768–992px range */
+@media (max-width: 992px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+    .hero-content {
+        max-width: 600px;
+        padding: 0 1.5rem;
+    }
+    .profile-image-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+    .timeline::before {
+        left: 30px !important;
+    }
+    .timeline-item {
+        width: 100% !important;
+        left: 0 !important;
+        padding-left: 60px !important;
+        padding-right: 0 !important;
+    }
+    .timeline-item::before,
+    .timeline-item::after {
+        left: 22px !important;
+        right: auto !important;
+    }
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.25rem;
+    }
+    .expertise-item {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
